@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'node20'
+    }
+
     parameters {
         string(
             name: 'APP_PORT',
@@ -51,10 +55,4 @@ pipeline {
             steps {
                 bat '''
                     echo App deployed successfully
-                    echo Open http://localhost:%APP_PORT%
-                    docker ps
-                '''
-            }
-        }
-    }
-}
+                    echo Open
