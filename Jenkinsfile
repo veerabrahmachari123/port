@@ -55,4 +55,10 @@ pipeline {
             steps {
                 bat '''
                     echo App deployed successfully
-                    echo Open
+                    echo Open http://localhost:%APP_PORT%
+                    docker ps
+                '''
+            }
+        }
+    }
+}
